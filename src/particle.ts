@@ -3,6 +3,7 @@ import type Effect from '@/effect'
 export default class Particle {
   private effect
   private context
+  private active
   private originX
   private originY
   private color
@@ -18,10 +19,12 @@ export default class Particle {
   private size
   private ease
   private friction
+  private timeout?: number
 
   constructor(effect: Effect, x: number, y: number, color: string) {
     this.effect = effect
     this.context = this.effect.context
+    this.active = true
     this.originX = Math.floor(x)
     this.originY = Math.floor(y)
     this.color = color
@@ -45,6 +48,7 @@ export default class Particle {
   }
 
   public update() {
+    if (!this.active) return
     this.dx = this.effect.pointer.x - this.x
     this.dy = this.effect.pointer.y - this.y
     this.distance = this.dx ** 2 + this.dy ** 2
@@ -68,5 +72,17 @@ export default class Particle {
     this.x = Math.random() * this.effect.width
     this.y = Math.random() > 0.5 ? 0 : this.effect.height
     this.ease = 0.04
+  }
+
+  public assemble = () => {
+    clearTimeout(this.timeout)
+    this.active = false
+    this.x = Math.random() * this.effect.width
+    this.y = Math.random() * this.effect.height
+    this.ease = 0.2
+    this.effect.counter++
+    this.timeout = setTimeout(() => {
+      this.active = true
+    }, this.effect.counter * 0.5)
   }
 }

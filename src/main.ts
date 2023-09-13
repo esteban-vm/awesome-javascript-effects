@@ -21,4 +21,7 @@ window.addEventListener('load', function () {
 
   const blocksButton = <HTMLButtonElement>this.document.getElementById('blocks')
   blocksButton.addEventListener('click', effect.blocks)
+
+  const assembleButton = <HTMLButtonElement>this.document.getElementById('assemble')
+  assembleButton.addEventListener('click', effect.assemble)
 })

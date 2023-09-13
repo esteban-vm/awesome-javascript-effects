@@ -7,6 +7,7 @@ export default class Effect {
   public height
   public gap
   public pointer
+  public counter
   private image
   private x
   private y
@@ -19,6 +20,7 @@ export default class Effect {
     this.height = this.canvas.height
     this.gap = 3
     this.pointer = { radius: 3_000, x: 0, y: 0 }
+    this.counter = 0
     this.image = <HTMLImageElement>document.getElementById('angler')
     this.x = this.width * 0.5 - this.image.width * 0.5
     this.y = this.height * 0.5 - this.image.height * 0.5
@@ -61,5 +63,10 @@ export default class Effect {
 
   public blocks = () => {
     this.particles.forEach((particle) => particle.blocks())
+  }
+
+  public assemble = () => {
+    this.counter = 0
+    this.particles.forEach((particle) => particle.assemble())
   }
 }
