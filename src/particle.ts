@@ -85,4 +85,16 @@ export default class Particle {
       this.active = true
     }, this.effect.counter * 0.5)
   }
+
+  public print = () => {
+    clearTimeout(this.timeout)
+    this.active = false
+    this.x = this.effect.width * 0.5
+    this.y = this.effect.height * 0.5
+    this.ease = 0.2
+    this.effect.counter++
+    this.timeout = setTimeout(() => {
+      this.active = true
+    }, this.effect.counter * 0.05)
+  }
 }

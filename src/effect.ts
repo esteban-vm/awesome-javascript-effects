@@ -21,7 +21,7 @@ export default class Effect {
     this.gap = 3
     this.pointer = { radius: 3_000, x: 0, y: 0 }
     this.counter = 0
-    this.image = <HTMLImageElement>document.getElementById('angler')
+    this.image = <HTMLImageElement>document.getElementById('spider')
     this.x = this.width * 0.5 - this.image.width * 0.5
     this.y = this.height * 0.5 - this.image.height * 0.5
     this.particles = []
@@ -68,5 +68,10 @@ export default class Effect {
   public assemble = () => {
     this.counter = 0
     this.particles.forEach((particle) => particle.assemble())
+  }
+
+  public print = () => {
+    this.counter = 0
+    this.particles.forEach((particle) => particle.print())
   }
 }

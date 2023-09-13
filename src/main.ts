@@ -24,4 +24,7 @@ window.addEventListener('load', function () {
 
   const assembleButton = <HTMLButtonElement>this.document.getElementById('assemble')
   assembleButton.addEventListener('click', effect.assemble)
+
+  const printButton = <HTMLButtonElement>this.document.getElementById('print')
+  printButton.addEventListener('click', effect.print)
 })
