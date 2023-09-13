@@ -14,14 +14,22 @@ img {
 }
 
 button {
-  padding: 20px;
+  padding: 15px;
   font-size: 30px;
   font-family: sans-serif;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid blueviolet;
+  border: 1px solid black;
   margin: 20px;
+  background-color: black;
+  color: beige;
+  transition: all 200ms;
+
+  &:hover {
+    background-color: beige;
+    color: black;
+  }
 }
 
 .controls {
