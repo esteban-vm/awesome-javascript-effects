@@ -6,6 +6,7 @@ export default class Effect {
   public width
   public height
   public gap
+  public pointer
   private image
   private x
   private y
@@ -17,10 +18,15 @@ export default class Effect {
     this.width = this.canvas.width
     this.height = this.canvas.height
     this.gap = 3
+    this.pointer = { radius: 3_000, x: 0, y: 0 }
     this.image = <HTMLImageElement>document.getElementById('angler')
     this.x = this.width * 0.5 - this.image.width * 0.5
     this.y = this.height * 0.5 - this.image.height * 0.5
     this.particles = []
+    window.addEventListener('pointermove', (event) => {
+      this.pointer.x = event.x
+      this.pointer.y = event.y
+    })
   }
 
   public init() {
