@@ -1,0 +1,30 @@
+@import 'normalize.css';
+
+body {
+  background-color: beige;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+}
+
+img {
+  display: none;
+}
+
+button {
+  padding: 20px;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  margin: 20px;
+}
+
+.controls {
+  position: absolute;
+  z-index: 100;
+}
