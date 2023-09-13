@@ -18,4 +18,7 @@ window.addEventListener('load', function () {
 
   const warpButton = <HTMLButtonElement>this.document.getElementById('warp')
   warpButton.addEventListener('click', effect.warp)
+
+  const blocksButton = <HTMLButtonElement>this.document.getElementById('blocks')
+  blocksButton.addEventListener('click', effect.blocks)
 })

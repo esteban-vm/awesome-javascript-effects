@@ -58,4 +58,8 @@ export default class Effect {
   public warp = () => {
     this.particles.forEach((particle) => particle.warp())
   }
+
+  public blocks = () => {
+    this.particles.forEach((particle) => particle.blocks())
+  }
 }

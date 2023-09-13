@@ -61,6 +61,12 @@ export default class Particle {
   public warp = () => {
     this.x = Math.random() * this.effect.width
     this.y = Math.random() * this.effect.height
-    this.ease = 0.05
+    this.ease = 0.2
+  }
+
+  public blocks = () => {
+    this.x = Math.random() * this.effect.width
+    this.y = Math.random() > 0.5 ? 0 : this.effect.height
+    this.ease = 0.04
   }
 }
